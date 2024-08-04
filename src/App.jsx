@@ -6,8 +6,7 @@ import Todos from './components/Todos'
 function App() {
   return (
     <>
-      <h1 className='text-5xl text-blue-900 '>TODO</h1>
-      <p>Double click after save to add todo again.</p>
+      <h1 className='text-5xl text-zinc-400 '>TODO</h1>
       <AddTodo />
       <Todos />
     </>

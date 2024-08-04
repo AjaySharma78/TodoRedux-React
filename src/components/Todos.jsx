@@ -8,16 +8,20 @@ import {
 
 function Todos() {
   const todos = useSelector((state) => state.todos);
-  console.log(todos);
   const dispatch = useDispatch();
 
   const handleToggleComplete = (id) => {
     dispatch(toggleComplete(id));
   };
 
+  const Upchar = (text) => {
+    const words = text.charAt(0).toUpperCase() + text.slice(1);
+    return words;
+  };
+
   return (
     <>
-      <div className="text-4xl mt-10  "> Todos List</div>
+      <div className="text-4xl mt-10 text-zinc-400"> Todos List</div>
 
       <ul className="list-none">
         {todos.map((todo) => (
@@ -34,7 +38,7 @@ function Todos() {
             <div
               className={`${todo.completed ? "line-through" : ""} text-white`}
             >
-              {todo.text}
+              {Upchar(todo.text)}
             </div>
 
             <div>
